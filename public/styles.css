@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 .full-video-note{font-size:13px;color:var(--muted);margin:16px 0 -12px}
+
+.portfolio-owner{font-size:15px;color:var(--muted);margin:0 0 14px}
