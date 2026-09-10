@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="触觉 SmolVLA、灵巧手旋拧与双臂遥操作的机器人项目视频演示。">
+  <meta name="theme-color" content="#ffffff">
+  <title>灵巧操作与机器人系统 · 项目演示</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至项目视频</a>
+<header class="hero" id="top">
+  <p class="eyebrow">ROBOT LEARNING &amp; MANIPULATION</p>
+  <h1>灵巧操作与机器人系统</h1>
+  <p class="subtitle">触觉策略 <span>·</span> Sim-to-Real <span>·</span> 双臂遥操作</p>
+  <nav aria-label="项目导航">
+    <a href="#tactile">触觉 SmolVLA <span aria-hidden="true">↗</span></a>
+    <a href="#dexterity">灵巧手旋拧 <span aria-hidden="true">↗</span></a>
+    <a href="#teleoperation">双臂遥操作 <span aria-hidden="true">↗</span></a>
+  </nav>
+  <p class="full-video-note">完整视频 · 保留原始画幅与时长</p>
+</header>
+<main id="main">
+<section id="tactile" aria-labelledby="tactile-title">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><div><p class="eyebrow">TACTILE VISUOMOTOR POLICY</p><h2 id="tactile-title">触觉 SmolVLA<span class="title-detail">抓放与扰动演示</span></h2></div><span class="context">真机 · 策略执行</span></div>
+  <p class="intro">从视觉、触觉与本体状态观测，到机械臂与灵巧手的抓取、搬运和放置。</p>
+  <div class="comparison-toolbar"><p>同类抓放任务，不同观测输入</p><div class="comparison-controls" hidden><button type="button" id="compare-play">同时播放</button><button type="button" id="compare-restart" class="secondary">重新开始</button></div></div>
+  <div class="video-grid comparison">
+    <figure>
+      <figcaption class="video-heading"><h3>含触觉输入</h3><span>抓取与放置</span></figcaption>
+      <div class="video-shell portrait"><video id="tactile-video" controls muted playsinline preload="none" poster="assets/tactile.jpg" aria-label="含触觉输入的真机抓放演示" src="assets/tactile.mp4"><track kind="captions" src="assets/tactile.vtt" srclang="zh" label="中文说明" default></video></div>
+      <p class="caption">抓取绿色方块，并将其搬运至红色方块上。</p>
+    </figure>
+    <figure>
+      <figcaption class="video-heading"><h3>无触觉输入</h3><span>未完成搬运</span></figcaption>
+      <div class="video-shell portrait"><video id="vision-video" controls muted playsinline preload="none" poster="assets/vision.jpg" aria-label="无触觉输入的真机抓放演示" src="assets/vision.mp4"><track kind="captions" src="assets/vision.vtt" srclang="zh" label="中文说明" default></video></div>
+      <p class="caption">抓取过程中方块脱落，本次演示未完成搬运。</p>
+    </figure>
+  </div>
+  <p class="comparison-note" id="compare-status" role="status">两段为独立演示，非逐帧配对实验；展示具体案例，不代表统计成功率。</p>
+  <figure class="wide-figure perturbation">
+    <figcaption class="video-heading"><h3>外部扰动下的抓放</h3><span>触觉 SmolVLA</span></figcaption>
+    <div class="video-shell tall-wide"><video controls muted playsinline preload="none" poster="assets/perturbation.jpg" aria-label="触觉策略外部扰动演示" src="assets/perturbation.mp4"><track kind="captions" src="assets/perturbation.vtt" srclang="zh" label="中文说明" default></video></div>
+    <p class="caption">观察外部扰动后的抓取、搬运与放置过程。</p>
+  </figure>
+  <div class="contribution"><h3>我的交付</h3><ul><li>搭建视觉、触觉与本体状态融合的仿真示教及训练链路，实现 DexH13 抓放策略训练。</li><li>集成 RM65–DexH13 真机采集、D435 外参标定、控制与安全执行，打通方块抓放部署闭环。</li></ul></div>
+  <p class="tech">SmolVLA <span>／</span> 多模态观测 <span>／</span> 真机部署</p>
+</section>
+<section id="dexterity" aria-labelledby="dexterity-title">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><div><p class="eyebrow">DEXTEROUS MANIPULATION</p><h2 id="dexterity-title">灵巧手旋拧<span class="title-detail">从策略学习到物理交互</span></h2></div><span class="context">DexH13 · Sim-to-Real</span></div>
+  <p class="intro">通过策略学习与蒸馏，让灵巧手在接触中协调手指运动。</p>
+  <div class="video-grid manipulation">
+    <figure>
+      <figcaption class="video-heading"><h3>灯泡旋拧</h3><span>真机 · 策略执行</span></figcaption>
+      <div class="video-shell landscape"><video controls muted playsinline preload="none" poster="assets/bulb.jpg" aria-label="灵巧手真机灯泡旋拧演示" src="assets/bulb.mp4"><track kind="captions" src="assets/bulb.vtt" srclang="zh" label="中文说明" default></video></div>
+      <p class="caption">人工扶持灯座，灵巧手执行旋拧；视频末尾灯泡点亮。</p>
+    </figure>
+    <figure>
+      <figcaption class="video-heading"><h3>M24 螺母旋拧</h3><span>真机演示</span></figcaption>
+      <div class="video-shell portrait"><video controls muted playsinline preload="none" poster="assets/nut.jpg" aria-label="M24 螺母真机旋拧演示" src="assets/nut.mp4"><track kind="captions" src="assets/nut.vtt" srclang="zh" label="中文说明" default></video></div>
+      <p class="caption">真机旋拧过程。本人交付范围：策略训练、蒸馏及仿真验证。</p>
+    </figure>
+  </div>
+  <div class="contribution"><h3>我的交付</h3><ul><li>分别训练灯泡与 M24 螺母任务的 PPO 策略，采用行为克隆与 PAdapt 蒸馏，形成独立的策略学习链路。</li><li id="rotation-delivery">部署灯泡策略至 DexH13 真机，接入触觉、本体状态及关节安全约束；验证螺母任务的仿真策略与部署接口。</li></ul></div>
+  <p class="tech">PPO <span>／</span> 策略蒸馏 <span>／</span> TorchScript</p>
+</section>
+<section id="teleoperation" aria-labelledby="teleop-title">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><div><p class="eyebrow">BIMANUAL TELEOPERATION</p><h2 id="teleop-title">双臂双灵巧手遥操作</h2></div><span class="context">真机 · 人工遥操作</span></div>
+  <p class="intro">将双手动作映射到双臂与灵巧手，建立面向示教采集的操作链路。</p>
+  <figure class="wide-figure"><figcaption class="video-heading"><h3>双手协同操作</h3><span>双 RM65B × 双 DexH13</span></figcaption><div class="video-shell landscape"><video controls muted playsinline preload="none" poster="assets/teleop.jpg" aria-label="双臂双灵巧手人工遥操作演示" src="assets/teleop.mp4"><track kind="captions" src="assets/teleop.vtt" srclang="zh" label="中文说明" default></video></div><p class="caption">展示双臂与双手的协同动作。画面以机器人端为主，动作由操作者遥控。</p></figure>
+  <div class="contribution"><h3>我的交付</h3><ul><li>开发双臂双灵巧手遥操作系统，集成 Vive Tracker、手套重定向、双臂逆运动学（IK）、状态服务与示教接口，建立动作控制与数据采集链路。</li></ul></div>
+  <p class="tech">Vive Tracker <span>／</span> 手部重定向 <span>／</span> 示教采集</p>
+</section>
+</main>
+<footer><span>灵巧操作与机器人系统 · 项目演示</span><a href="#top">回到顶部 ↑</a></footer>
+</body>
+</html>
