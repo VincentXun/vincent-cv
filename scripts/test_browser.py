@@ -2,10 +2,12 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 import json
+import os
+from urllib.parse import urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
-URL='http://localhost:8000'
-EXPECTED={'tactile':33.58,'vision':25.05,'perturbation':43.71,'bulb':18.33,'nut':96.36,'teleop':105.26}
+URL=os.environ.get('SITE_TEST_URL', 'http://localhost:8000')
+EXPECTED={'rlt':76.97,'tactile':33.58,'vision':25.05,'perturbation':43.71,'bulb':18.33,'nut':96.36,'teleop':105.26}
 
 def main():
  with sync_playwright() as p:
@@ -18,7 +20,7 @@ def main():
   page.wait_for_load_state('networkidle')
   assert not any('.mp4' in url for url in requests), 'Videos loaded before interaction'
   assert all(url.startswith(URL) for url in requests), 'External dependency'
-  assert page.locator('video').count()==6
+  assert page.locator('video').count()==7
   assert page.locator('video').first.bounding_box()['y'] < 750
   page.keyboard.press('Tab'); assert page.locator('.skip').evaluate('(e)=>e===document.activeElement')
   page.keyboard.press('Enter'); assert page.url.endswith('#main')
@@ -27,7 +29,7 @@ def main():
   page.locator('#compare-play').click()
   assert page.locator('.comparison video').evaluate_all('(vs)=>vs.every(v=>v.paused)')
   page.locator('#compare-restart').click()
-  page.wait_for_function("[...document.querySelectorAll('.comparison video')].every(v => !v.paused && v.currentTime < 3)")
+  page.wait_for_function("[...document.querySelectorAll('.comparison video')].every(v => !v.paused && v.currentTime > .2 && v.currentTime < 3)")
   page.locator('video').nth(2).evaluate('(v)=>v.play()')
   page.wait_for_function("[...document.querySelectorAll('.comparison video')].every(v=>v.paused)")
   metadata=[]
@@ -35,7 +37,7 @@ def main():
    video.evaluate('(v)=>v.play()')
    page.wait_for_function('(src)=>{const v=[...document.querySelectorAll("video")].find(v=>v.getAttribute("src")===src);return v.readyState>=2 && v.currentTime>0}',arg=video.get_attribute('src'))
    data=video.evaluate('(v)=>({src:v.getAttribute("src"),duration:v.duration,width:v.videoWidth,height:v.videoHeight,muted:v.muted,rate:v.playbackRate,cues:v.textTracks[0].cues.length})')
-   slug=Path(data['src']).stem
+   slug=Path(urlsplit(data['src']).path).stem
    assert abs(data['duration']-EXPECTED[slug])<.12,data
    assert data['muted'] and data['rate']==1 and data['cues']>0
    video.evaluate('(v)=>{v.pause();v.currentTime=v.duration*.7}')
@@ -48,7 +50,7 @@ def main():
   page.locator('video').first.evaluate('(v)=>v.requestFullscreen()')
   assert page.evaluate('document.fullscreenElement!==null')
   page.evaluate('document.exitFullscreen()')
-  for anchor in ['tactile','dexterity','teleoperation']:
+  for anchor in ['tactile','dexterity','rlt','teleoperation']:
    page.locator(f'nav a[href="#{anchor}"]').click(); assert page.url.endswith('#'+anchor)
   page.goto(URL);page.screenshot(path=str(ROOT/'review/desktop.png'),full_page=True)
   for width in [390,320,768]:
@@ -73,9 +75,9 @@ def main():
   fail.locator('.media-error').wait_for();assert fail.locator('.media-error a').get_attribute('href')=='assets/tactile.mp4';fail.close()
   nojs=browser.new_context(java_script_enabled=False);plain=nojs.new_page();plain.goto(URL)
   assert not plain.locator('.comparison-controls').is_visible()
-  assert plain.locator('video[controls]').count()==6
+  assert plain.locator('video[controls]').count()==7
   nojs.close()
   browser.close()
-  (ROOT/'review/browser-results.json').write_text(json.dumps({'passed':True,'videos':metadata,'checks':['no initial video requests','no external requests','keyboard skip link','comparison play/pause/restart','exclusive playback','all six videos seek and end','captions','fullscreen','anchors','320/390/768 widths','200% text','project subpath','media error','no-JS fallback']},ensure_ascii=False,indent=2))
-  print('PASS: 6 full-duration videos; playback, seek, captions, fullscreen, comparison, responsive layout and fallbacks.')
+  (ROOT/'review/browser-results.json').write_text(json.dumps({'passed':True,'videos':metadata,'checks':['no initial video requests','no external requests','keyboard skip link','comparison play/pause/restart','exclusive playback','all seven videos seek and end','captions','fullscreen','anchors','320/390/768 widths','200% text','project subpath','media error','no-JS fallback']},ensure_ascii=False,indent=2))
+  print('PASS: 7 full-duration videos; playback, seek, captions, fullscreen, comparison, responsive layout and fallbacks.')
 if __name__=='__main__':main()

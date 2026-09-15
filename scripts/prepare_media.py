@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT.parent / '视频demo'
 DEST = ROOT / 'public/assets'
 ITEMS = [
+ ('RLT真机部署.mp4', 'rlt', 60, True),
  ('触觉 SmolVLA-触觉成功.mp4', 'tactile', 20, False),
  ('触觉 SmolVLA-无触觉失败.mp4', 'vision', 16, False),
  ('触觉 SmolVLA-抗干扰能力.mp4', 'perturbation', 26, False),
@@ -32,7 +33,7 @@ def main():
         source = SOURCE / filename
         video_codec = ['-c:v', 'copy'] if already_h264 else ['-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-pix_fmt', 'yuv420p', '-threads', '2']
         video_map = ['-filter_complex', BULB_PRIVACY_FILTER, '-map', '[v]'] if slug == 'bulb' else ['-map', '0:v:0']
-        subprocess.run([ffmpeg, '-hide_banner', '-loglevel', 'error', '-y', '-i', str(source), *video_map, '-map', '0:a:0?', *video_codec, '-c:a', 'copy', '-map_metadata', '-1', '-movflags', '+faststart', str(DEST / f'{slug}.mp4')], check=True)
+        subprocess.run([ffmpeg, '-hide_banner', '-loglevel', 'error', '-y', '-i', str(source), *video_map, *(['-an'] if slug == 'rlt' else ['-map', '0:a:0?', '-c:a', 'copy']), *video_codec, '-map_metadata', '-1', '-movflags', '+faststart', str(DEST / f'{slug}.mp4')], check=True)
         subprocess.run([ffmpeg, '-hide_banner', '-loglevel', 'error', '-y', '-ss', str(poster_time), '-i', str(DEST / f'{slug}.mp4'), '-frames:v', '1', '-vf', 'scale=960:960:force_original_aspect_ratio=decrease', '-q:v', '3', str(DEST / f'{slug}.jpg')], check=True)
         print(slug, round((DEST / f'{slug}.mp4').stat().st_size / 1048576, 2), 'MiB', flush=True)
 

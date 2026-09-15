@@ -1,6 +1,6 @@
 # Vincent 简历 · 个人项目成果展示
 
-用于面试展示的中文静态视频页。包含六段完整视频、三组项目、触觉双视频对照控制和少量已确认的个人交付说明；没有简历、电话、邮箱或头像。
+用于面试展示的中文静态视频页。包含七段完整视频、四组项目、触觉双视频对照控制和少量已确认的个人交付说明；没有简历、电话、邮箱或头像。
 
 ## 本地预览
 
@@ -14,16 +14,16 @@ python3 scripts/serve.py
 
 ## 目录
 
-- `public/`：唯一网站发布目录，包含 HTML、CSS、JavaScript、六段 MP4、封面和 VTT 字幕。
+- `public/`：唯一网站发布目录，包含 HTML、CSS、JavaScript、七段 MP4、封面和 VTT 字幕。
 - `scripts/`：本地预览、媒体处理与验收工具，不随 Pages 页面发布。
 - `.github/workflows/pages.yml`：网站验证与 GitHub Pages 部署工作流，推送 main 后自动发布。
 - `review/`：本地核对记录与截图，已忽略，不应推送。
 
 ## 视频完整性
 
-原始视频位于上一级 `视频demo/`，不做任何修改。网页视频保留全部帧、原始画幅、时长与音轨；灯泡视频的背景人脸区域已做强马赛克处理，不剪切、不加速、不混剪。原素材中的剪辑与拍摄速度不作额外推断。
+原始视频位于上一级 `视频demo/`，不做任何修改。网页视频保留全部帧、原始画幅和时长；RLT 视频移除全部音轨，其他视频保留原音轨；灯泡视频的背景人脸区域已做强马赛克处理，不剪切、不加速、不混剪。原素材中的剪辑与拍摄速度不作额外推断。
 
-四段 HEVC 视频转换为 H.264/yuv420p，保持原始分辨率和帧率；已经是 H.264 的遥操作与螺母素材仅无损重封装。所有文件将 MP4 索引移至文件头以快速起播。封面从处理后的网页视频提取，灯泡封面同样包含人脸打码，不替换视频片头。字幕是可关闭的独立 VTT 说明，未烧录到视频。
+RLT 为 H.264 原码流无损封装并移除音轨。四段 HEVC 视频转换为 H.264/yuv420p，保持原始分辨率和帧率；已经是 H.264 的遥操作与螺母素材仅无损重封装。所有文件将 MP4 索引移至文件头以快速起播。封面从处理后的网页视频提取，灯泡封面同样包含人脸打码，不替换视频片头。字幕是可关闭的独立 VTT 说明，未烧录到视频。
 
 重新准备媒体（需要上一级原始素材）：
 
@@ -32,7 +32,7 @@ python3 -m pip install imageio-ffmpeg
 python3 scripts/prepare_media.py
 ```
 
-已逐一验证原视频与网页视频帧数一致：触觉成功 1006 帧、无触觉 750 帧、扰动 1311 帧、灯泡 550 帧、螺母 2889 帧、遥操作 3155 帧。完整验证输出见本地 `review/media-integrity.json`。
+已逐一验证原视频与网页视频帧数一致：触觉成功 1006 帧、无触觉 750 帧、扰动 1311 帧、灯泡 550 帧、螺母 2889 帧、遥操作 3155 帧、RLT 2309 帧。完整验证输出见本地 `review/media-integrity.json`。
 
 ## 内容口径
 
@@ -40,7 +40,7 @@ python3 scripts/prepare_media.py
 - 灯泡视频保留人工扶持灯座的全过程，并注明这一条件。
 - 螺母视频为真机画面，但项目档案对本人贡献目前只确认了训练、蒸馏与仿真验证；当前文案明确限定在此范围。未确认本人真机部署归属前，不扩写该贡献。
 - 遥操作视频以机器人端为主，没有虚构操作者同框或自主策略执行。
-- 本地页面包含所有六段视频。发布前仍需核对视频的公开范围、螺母归因以及目标 GitHub 账户；源码与网页素材统一保存在公开仓库 VincentXun/vincent-cv，并直接通过 GitHub Pages 发布。
+- 本地页面包含所有七段视频。发布前仍需核对视频的公开范围、螺母归因以及目标 GitHub 账户；源码与网页素材统一保存在公开仓库 VincentXun/vincent-cv，并直接通过 GitHub Pages 发布。
 
 ## 检查
 
@@ -57,7 +57,7 @@ python3 -m playwright install chromium
 python3 scripts/test_browser.py
 ```
 
-覆盖首次加载不请求视频、六段时长与解码、拖动及结束播放、字幕、全屏、双视频控制、互斥播放、键盘入口、手机布局、项目子路径、视频加载失败及无 JavaScript 回退。截图与结果保存在 `review/`。
+覆盖首次加载不请求视频、七段时长与解码、拖动及结束播放、字幕、全屏、双视频控制、互斥播放、键盘入口、手机布局、项目子路径、视频加载失败及无 JavaScript 回退。截图与结果保存在 `review/`。
 
 ## GitHub Pages 发布与更新
 
@@ -67,11 +67,11 @@ python3 scripts/test_browser.py
 
 1. 修改页面并运行本地校验。
 2. 提交并推送 `main`，GitHub Actions 校验文件并自动将 `public/` 发布至 Pages；也可手动触发工作流。
-3. 检查线上页面及 `#tactile`、`#dexterity`、`#teleoperation` 三个项目直达链接。
+3. 检查线上页面及 `#tactile`、`#dexterity`、`#rlt`、`#teleoperation` 四个项目直达链接。
 
 整个仓库公开可读，但仅 `public/` 作为网页发布。不要提交上一级的原简历、内部项目档案或其他私人材料。`review/` 已被 Git 忽略。
 
-部署配置遵循 [GitHub Pages 自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。网站约 34.32 MiB。
+部署配置遵循 [GitHub Pages 自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。网站约 39.25 MiB。
 
 ## 设计参考
 
