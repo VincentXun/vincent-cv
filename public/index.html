@@ -61,11 +61,16 @@
       <p class="caption">人工扶持灯座，灵巧手执行旋拧；视频末尾灯泡点亮。背景人脸已打码。</p>
     </figure>
     <figure>
-      <figcaption class="video-heading"><h3>M24 螺母旋拧</h3><span>真机演示</span></figcaption>
+      <figcaption class="video-heading"><h3>M24 螺母旋拧</h3><span>早期版本 · 真机演示</span></figcaption>
       <div class="video-shell portrait"><video controls muted playsinline preload="none" poster="assets/nut.jpg" aria-label="M24 螺母真机旋拧演示" src="assets/nut.mp4"><track kind="captions" src="assets/nut.vtt" srclang="zh" label="中文说明" default></video></div>
       <p class="caption">真机旋拧过程。本人交付范围：策略训练、蒸馏及仿真验证。</p>
     </figure>
   </div>
+  <figure class="wide-figure m24-update" id="m24-improved">
+    <figcaption class="video-heading"><h3>M24 旋拧改进<span class="title-detail">低接触力连续循环</span></h3><span>新版 · 仿真验证</span></figcaption>
+    <div class="video-shell simulation"><video id="nut-improved-video" controls muted playsinline preload="none" poster="assets/nut-improved.jpg" aria-label="新版 M24 低接触力连续旋拧仿真验证完整视频" src="assets/nut-improved.mp4"><track kind="captions" src="assets/nut-improved.vtt" srclang="zh" label="中文说明" default></video></div>
+    <p class="caption">在同一段连续仿真中完成五次“旋拧—松开—回位—重抓持”循环。沿用策略权重，通过降低控制增益改善接触力表现；保留完整验证视频。</p>
+  </figure>
   <div class="contribution"><h3>我的交付</h3><ul><li>分别训练灯泡与 M24 螺母任务的 PPO 策略，采用行为克隆与 PAdapt 蒸馏，形成独立的策略学习链路。</li><li id="rotation-delivery">部署灯泡策略至 DexH13 真机，接入触觉、本体状态及关节安全约束；验证螺母任务的仿真策略与部署接口。</li></ul></div>
   <p class="tech">PPO <span>／</span> 策略蒸馏 <span>／</span> TorchScript</p>
 </section>

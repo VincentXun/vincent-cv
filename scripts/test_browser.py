@@ -7,7 +7,7 @@ from urllib.parse import urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
 URL=os.environ.get('SITE_TEST_URL', 'http://localhost:8000')
-EXPECTED={'rlt':76.97,'tactile':33.58,'vision':25.05,'perturbation':43.71,'bulb':18.33,'nut':96.36,'teleop':105.26}
+EXPECTED={'nut-improved':9.85,'rlt':76.97,'tactile':33.58,'vision':25.05,'perturbation':43.71,'bulb':18.33,'nut':96.36,'teleop':105.26}
 
 def main():
  with sync_playwright() as p:
@@ -20,7 +20,7 @@ def main():
   page.wait_for_load_state('networkidle')
   assert not any('.mp4' in url for url in requests), 'Videos loaded before interaction'
   assert all(url.startswith(URL) for url in requests), 'External dependency'
-  assert page.locator('video').count()==7
+  assert page.locator('video').count()==8
   assert page.locator('video').first.bounding_box()['y'] < 750
   page.keyboard.press('Tab'); assert page.locator('.skip').evaluate('(e)=>e===document.activeElement')
   page.keyboard.press('Enter'); assert page.url.endswith('#main')
@@ -75,9 +75,9 @@ def main():
   fail.locator('.media-error').wait_for();assert fail.locator('.media-error a').get_attribute('href')=='assets/tactile.mp4';fail.close()
   nojs=browser.new_context(java_script_enabled=False);plain=nojs.new_page();plain.goto(URL)
   assert not plain.locator('.comparison-controls').is_visible()
-  assert plain.locator('video[controls]').count()==7
+  assert plain.locator('video[controls]').count()==8
   nojs.close()
   browser.close()
-  (ROOT/'review/browser-results.json').write_text(json.dumps({'passed':True,'videos':metadata,'checks':['no initial video requests','no external requests','keyboard skip link','comparison play/pause/restart','exclusive playback','all seven videos seek and end','captions','fullscreen','anchors','320/390/768 widths','200% text','project subpath','media error','no-JS fallback']},ensure_ascii=False,indent=2))
-  print('PASS: 7 full-duration videos; playback, seek, captions, fullscreen, comparison, responsive layout and fallbacks.')
+  (ROOT/'review/browser-results.json').write_text(json.dumps({'passed':True,'videos':metadata,'checks':['no initial video requests','no external requests','keyboard skip link','comparison play/pause/restart','exclusive playback','all eight videos seek and end','captions','fullscreen','anchors','320/390/768 widths','200% text','project subpath','media error','no-JS fallback']},ensure_ascii=False,indent=2))
+  print('PASS: 8 full-duration videos; playback, seek, captions, fullscreen, comparison, responsive layout and fallbacks.')
 if __name__=='__main__':main()

@@ -8,3 +8,5 @@
 .full-video-note{font-size:13px;color:var(--muted);margin:16px 0 -12px}
 
 .portfolio-owner{font-size:15px;color:var(--muted);margin:0 0 14px}
+
+.m24-update{margin-top:30px;scroll-margin-top:24px}.simulation{aspect-ratio:4/3;max-width:900px;margin-inline:auto}
