@@ -39,7 +39,7 @@ def main():
         assert not u.path.startswith('/'), f'Not subpath-safe: {link}'
         if u.path: assert (ROOT/unquote(u.path)).is_file(), f'Missing asset: {link}'
         if u.fragment: assert u.fragment in page.ids, f'Missing anchor: {link}'
-    assert len(page.videos) == 8
+    assert len(page.videos) == 7
     for video in page.videos:
         assert all(key in video for key in ('controls','muted','playsinline','poster'))
         assert video.get('preload')=='none' and 'autoplay' not in video

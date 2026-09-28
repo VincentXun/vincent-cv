@@ -8,13 +8,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT.parent / '视频demo'
 DEST = ROOT / 'public/assets'
 ITEMS = [
- ('M24新版低接触力循环.mp4', 'nut-improved', 4, True),
  ('RLT真机部署.mp4', 'rlt', 60, True),
  ('触觉 SmolVLA-触觉成功.mp4', 'tactile', 20, False),
  ('触觉 SmolVLA-无触觉失败.mp4', 'vision', 16, False),
  ('触觉 SmolVLA-抗干扰能力.mp4', 'perturbation', 26, False),
  ('拧灯泡.mp4', 'bulb', 16.8, False),
- ('拧螺母.mp4', 'nut', 35, True),
+ ('M24真机旋拧20260928.mp4', 'nut-current', 8, False),
  ('双臂双手遥操作系统.mp4', 'teleop', 40, True),
 ]
 
