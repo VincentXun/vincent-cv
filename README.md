@@ -1,6 +1,6 @@
 # Vincent 简历 · 个人项目成果展示
 
-用于面试展示的中文静态视频页。包含七段完整视频、四组项目、触觉双视频对照控制和少量已确认的个人交付说明；没有简历、电话、邮箱或头像。
+用于面试展示的中文静态视频页，同时保存简历源文件和原始演示素材。网页包含七段完整视频、四组项目、触觉双视频对照控制和少量已确认的个人交付说明。
 
 ## 本地预览
 
@@ -16,6 +16,8 @@ python3 scripts/serve.py
 
 - `public/`：唯一网站发布目录，包含 HTML、CSS、JavaScript、七段 MP4、封面和 VTT 字幕。
 - `scripts/`：本地预览、媒体处理与验收工具，不随 Pages 页面发布。
+- `resume-source/`：简历的 DOCX、FODT、PDF、模板说明和头像源文件，不随 Pages 页面发布。
+- `source-media/`：网页制作前的原始演示视频，不随 Pages 页面发布。
 - `.github/workflows/pages.yml`：网站验证与 GitHub Pages 部署工作流，推送 main 后自动发布。
 - `review/`：本地核对记录与截图，已忽略，不应推送。
 

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document
+  xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+  xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+  xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+  xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
+  xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  office:version="1.2"
+  office:mimetype="application/vnd.oasis.opendocument.text">
+  <office:meta>
+    <dc:title>卢尚逊｜具身智能研发实习生简历（ATS版）</dc:title>
+    <dc:creator>卢尚逊</dc:creator>
+  </office:meta>
+  <office:font-face-decls>
+    <style:font-face style:name="NotoSans" svg:font-family="Noto Sans CJK SC" style:font-family-generic="system" style:font-pitch="variable" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"/>
+    <style:font-face style:name="LiberationSans" svg:font-family="Liberation Sans" style:font-family-generic="swiss" style:font-pitch="variable" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"/>
+  </office:font-face-decls>
+  <office:styles>
+    <style:default-style style:family="paragraph">
+      <style:paragraph-properties style:writing-mode="lr-tb"/>
+      <style:text-properties style:font-name="LiberationSans" style:font-name-asian="NotoSans" fo:font-size="10pt" style:font-size-asian="10pt" fo:language="en" fo:country="US" style:language-asian="zh" style:country-asian="CN"/>
+    </style:default-style>
+    <style:style style:name="Base" style:family="paragraph">
+      <style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.025cm" fo:line-height="109%" fo:orphans="2" fo:widows="2"/>
+      <style:text-properties style:font-name="LiberationSans" style:font-name-asian="NotoSans" fo:font-size="10pt" style:font-size-asian="10pt"/>
+    </style:style>
+    <style:style style:name="Name" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-bottom="0.04cm" fo:line-height="100%"/>
+      <style:text-properties fo:font-size="18pt" style:font-size-asian="18pt" fo:font-weight="bold" style:font-weight-asian="bold"/>
+    </style:style>
+    <style:style style:name="Role" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-bottom="0.03cm"/>
+      <style:text-properties fo:font-size="10.8pt" style:font-size-asian="10.8pt" fo:font-weight="bold" style:font-weight-asian="bold"/>
+    </style:style>
+    <style:style style:name="Availability" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-bottom="0.025cm"/>
+      <style:text-properties fo:font-size="9.9pt" style:font-size-asian="9.9pt" fo:font-weight="bold" style:font-weight-asian="bold"/>
+    </style:style>
+    <style:style style:name="Contact" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-bottom="0.04cm"/>
+      <style:text-properties fo:font-size="9.8pt" style:font-size-asian="9.8pt"/>
+    </style:style>
+    <style:style style:name="Section" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-top="0.03cm" fo:margin-bottom="0.02cm" fo:border-bottom="0.018cm solid #000000" fo:padding-bottom="0.02cm" fo:keep-with-next="always"/>
+      <style:text-properties fo:font-size="11.2pt" style:font-size-asian="11.2pt" fo:font-weight="bold" style:font-weight-asian="bold"/>
+    </style:style>
+    <style:style style:name="Entry" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-top="0.02cm" fo:margin-bottom="0.008cm"/>
+      <style:text-properties fo:font-size="10.1pt" style:font-size-asian="10.1pt"/>
+    </style:style>
+    <style:style style:name="Bullet" style:family="paragraph" style:parent-style-name="Base">
+      <style:paragraph-properties fo:margin-top="0.005cm" fo:margin-bottom="0.008cm" fo:line-height="104%"/>
+      <style:text-properties fo:font-size="9.8pt" style:font-size-asian="9.8pt"/>
+    </style:style>
+    <style:style style:name="Bold" style:family="text">
+      <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold"/>
+    </style:style>
+  </office:styles>
+  <office:automatic-styles>
+    <style:page-layout style:name="PL1">
+      <style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:print-orientation="portrait" fo:margin-top="0.60cm" fo:margin-bottom="0.30cm" fo:margin-left="1.35cm" fo:margin-right="1.35cm" style:writing-mode="lr-tb"/>
+    </style:page-layout>
+    <text:list-style style:name="BulletList">
+      <text:list-level-style-bullet text:level="1" text:bullet-char="•">
+        <style:list-level-properties text:space-before="0.46cm" text:min-label-width="0.34cm"/>
+      </text:list-level-style-bullet>
+    </text:list-style>
+  </office:automatic-styles>
+  <office:master-styles>
+    <style:master-page style:name="Standard" style:page-layout-name="PL1"/>
+  </office:master-styles>
+  <office:body>
+    <office:text>
+      <text:p text:style-name="Name">卢尚逊</text:p>
+      <text:p text:style-name="Role">具身智能 / 机器人研发实习生</text:p>
+      <text:p text:style-name="Availability">预计到岗：2026 年 10 月中旬｜可连续实习：4-6 个月</text:p>
+      <text:p text:style-name="Contact">华南理工大学｜电子信息硕士在读｜意向深圳｜150-1565-4493｜2308919367@qq.com</text:p>
+      <text:p text:style-name="Contact">项目视频集：<text:a xlink:href="https://vincentxun.github.io/vincent-cv/" xlink:type="simple">https://vincentxun.github.io/vincent-cv/</text:a></text:p>
+
+      <text:p text:style-name="Section">教育背景</text:p>
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">华南理工大学</text:span>　电子信息（自动化方向）硕士研究生　｜　2025.09-至今</text:p>
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">华南理工大学</text:span>　自动化专业创新班，本科　｜　2021.09-2025.07</text:p>
+
+      <text:p text:style-name="Section">核心技能</text:p>
+      <text:list text:style-name="BulletList">
+        <text:list-item><text:p text:style-name="Bullet"><text:span text:style-name="Bold">机器人系统：</text:span>Python、C/C++、ROS/ROS 2、Linux；RealMan 机械臂、帕西尼 DexH13 灵巧手、D435、Quest 3；通信、FK/IK、遥操作、外参标定与 Sim-to-Real。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet"><text:span text:style-name="Bold">具身学习：</text:span>PyTorch、PPO、模仿学习、SmolVLA、TorchScript；Isaac Gym、MuJoCo；视觉—触觉—本体状态多模态数据与策略部署。</text:p></text:list-item>
+      </text:list>
+
+      <text:p text:style-name="Section">项目经历</text:p>
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">触觉 SmolVLA：仿真训练到真机抓放部署</text:span></text:p>
+      <text:list text:style-name="BulletList">
+        <text:list-item><text:p text:style-name="Bullet">搭建帕西尼 DexH13 灵巧手触觉 SmolVLA 仿真训练全流程，完成抓放任务建模、手部重定向、视觉/触觉/本体状态建模、仿真示教采集与策略训练。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">设计真机采集、训练与部署闭环，集成 RealMan 机械臂、帕西尼 DexH13 灵巧手控制、D435 外参标定与安全执行；完成方块抓取搬运真机实验，现场对比中触觉最佳模型优于无触觉最佳模型。</text:p></text:list-item>
+      </text:list>
+
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">帕西尼 DexH13 灵巧手旋拧 Sim-to-Real：灯泡与 M24 螺母任务</text:span></text:p>
+      <text:list text:style-name="BulletList">
+        <text:list-item><text:p text:style-name="Bullet">分别针对灯泡与 M24 螺母旋拧任务训练 PPO 教师策略，并以行为克隆（BC）和 PAdapt 进行差异化蒸馏，形成两条独立的策略学习链路。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">完成灯泡与 M24 螺母任务的 Sim-to-Real 策略迁移；在帕西尼 DexH13 灵巧手上完成灯泡真机部署，接入触觉、本体状态及关节安全约束。</text:p></text:list-item>
+      </text:list>
+
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">USB 插拔 VLA+RLT 人在环强化学习</text:span></text:p>
+      <text:list text:style-name="BulletList">
+        <text:list-item><text:p text:style-name="Bullet">复现并扩展 RealMan 机械臂 USB 插拔 VLA+RLT 流程，以 SmolVLA 为基础策略，结合动作门控和关节残差修正精细插入动作。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">实现 Quest 3 人在环（HIL）接管，完成 HDF5 采集质检、LeRobot 转换与在线/人工干预回放缓冲区构建，支撑 RLT 训练。</text:p></text:list-item>
+      </text:list>
+
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">双臂双手遥操作系统</text:span></text:p>
+      <text:list text:style-name="BulletList"><text:list-item><text:p text:style-name="Bullet">开发双 RealMan 机械臂与双帕西尼 DexH13 灵巧手遥操作系统，集成 Vive Tracker、手套重定向、双臂 IK、状态服务与示教数据接口。</text:p></text:list-item></text:list>
+
+      <text:p text:style-name="Section">实习经历</text:p>
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">广州万维视景科技有限公司｜研发实习生</text:span>　｜　2026.03-至今</text:p>
+      <text:list text:style-name="BulletList">
+        <text:list-item><text:p text:style-name="Bullet">面向灵巧操作与视觉触觉策略开展真机研发，覆盖策略训练/蒸馏、遥操作示教、数据采集与硬件闭环调试。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">将 M24 螺母旋拧的 PPO、策略蒸馏与 Sim-to-Real 验证流程转化为国培实训课程，完成课程方案、课件、学习平台与技术讲解交付。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">设计大象建筑机器人软件系统，打通 IFC 墙体语义解析、底盘位姿生成、RealMan 机械臂与升降座轨迹、任务编排和安全执行接口。</text:p></text:list-item>
+      </text:list>
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">广州创之力有限公司｜研发实习生</text:span>　｜　2024.10-2025.04</text:p>
+      <text:list text:style-name="BulletList"><text:list-item><text:p text:style-name="Bullet">开发产线埃斯顿（ESTUN）机器人通信与运动控制，融合 2D 识别和 3D 点云分析，完成外观缺陷与自动涂胶检测的现场联调。</text:p></text:list-item></text:list>
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">佛山华数机器人有限公司｜研发部实习生</text:span>　｜　2024.07-2024.09</text:p>
+      <text:list text:style-name="BulletList"><text:list-item><text:p text:style-name="Bullet">完成机器人产品装配、硬件接线与软件平台实验 Demo 设计，梳理跨部门交接及设备故障定位标准化文档。</text:p></text:list-item></text:list>
+
+      <text:p text:style-name="Section">校园科研与技术成果</text:p>
+      <text:list text:style-name="BulletList">
+        <text:list-item><text:p text:style-name="Bullet">在华南理工大学马宏军教授课题组开展具身智能与灵巧手研究。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">作为组长完成“车载机械臂系统的智能控制及应用”SRP 项目与“静脉识别算法实验研究”课题结题。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">在华南理工大学杨延年教授课题组开展多旋翼飞行器设计与控制研究。</text:p></text:list-item>
+        <text:list-item><text:p text:style-name="Bullet">在 CSDN 发布多篇机器人仿真技术博客；《MuJoCo 全流程实战教程：从零搭建一个仿真实验》阅读量 3 万+。</text:p></text:list-item>
+      </text:list>
+
+      <text:p text:style-name="Entry"><text:span text:style-name="Bold">奖项：</text:span>智能车竞赛校内第二名；挑战杯省二等奖；华南理工大学三等奖学金；CET-6。</text:p>
+    </office:text>
+  </office:body>
+</office:document>
